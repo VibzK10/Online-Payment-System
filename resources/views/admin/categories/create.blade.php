@@ -44,11 +44,11 @@
 @endsection
 
 @section('styles')
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+<link href="{{ asset('css/bootstrap-colorpicker.min.css') }}" rel="stylesheet">
 @endsection
 
 @section('scripts')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/js/bootstrap-colorpicker.min.js"></script>
+<script src="{{ asset('js/bootstrap-colorpicker.min.js') }}"></script>
 <script>
     $('.colorpicker').colorpicker();
 </script>
