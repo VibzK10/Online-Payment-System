@@ -16,4 +16,25 @@ class Payment extends Controller
     {
         //
     }
+
+      /**
+     * Display the specified resource.
+     *
+     * @param  \App\Ticket  $ticket
+     * @return \Illuminate\Http\Response
+     */
+    public function show($ticketId)
+    {
+
+        // get from db by ticket id
+        $amount = 100;
+
+        $paymentDetails = [
+            'id' => $ticketId,
+            'amount' => $amount
+        ];
+
+        return view('tickets.payment', compact('paymentDetails'));
+    }
+
 }
