@@ -103,7 +103,7 @@
                             @enderror
                         </div>
                         <button type="submit" class="btn btn-primary">@lang('global.submit')</button>
-                        <button type="button" data-aciton="sendOTP" class="float-right btn btn-primary">Proceed to payment</button>
+                        <a class="btn btn-success" href="{{ route("tickets.payment") }}"> Proceed to payment </a>
                     </form>
                 </div>
             </div>
