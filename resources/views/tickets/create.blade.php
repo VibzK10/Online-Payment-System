@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+@auth
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
@@ -17,7 +19,7 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="author_name" class="col-md-4 col-form-label text-md-right">Your Name</label>
+                            <label for="author_name" class="col-md-4 col-form-label text-md-right">Offender's name</label>
 
                             <div class="col-md-6">
                                 <input id="author_name" type="text" class="form-control @error('author_name') is-invalid @enderror" name="author_name" value="{{ old('author_name') }}" required autocomplete="name" autofocus>
@@ -29,7 +31,7 @@
                                 @enderror
                             </div>
                         </div>
-
+<!--
                         <div class="form-group row">
                             <label for="author_email" class="col-md-4 col-form-label text-md-right">Your Email</label>
 
@@ -42,7 +44,7 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="form-group row">
                             <label for="title" class="col-md-4 col-form-label text-md-right">@lang('cruds.ticket.fields.title')</label>
@@ -59,7 +61,63 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="content" class="col-md-4 col-form-label text-md-right">@lang('cruds.ticket.fields.content')</label>
+                            <label for="nid" class="col-md-4 col-form-label text-md-right">NID</label>
+
+                            <div class="col-md-6">
+                                <input id="nid" type="text" class="form-control @error('title') is-invalid @enderror" name="nid" value="{{ old('nid') }}" required autocomplete="nid">
+
+                                @error('nid')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="nid" class="col-md-4 col-form-label text-md-right">Location</label>
+
+                            <div class="col-md-6">
+                                <input id="nid" type="text" class="form-control @error('nid') is-invalid @enderror" name="nid" value="{{ old('nid') }}" required autocomplete="nid">
+
+                                @error('nid')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="vehicleNum" class="col-md-4 col-form-label text-md-right">Vehicle number</label>
+
+                            <div class="col-md-6">
+                                <input id="vehicleNum" type="text" class="form-control @error('vehicleNum') is-invalid @enderror" name="vehicleNum" value="{{ old('vehicleNum') }}" required autocomplete="vehicleNum">
+
+                                @error('vehicleNum')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="licence" class="col-md-4 col-form-label text-md-right">License Number</label>
+
+                            <div class="col-md-6">
+                                <input id="licence" type="text" class="form-control @error('licence') is-invalid @enderror" name="licence" value="{{ old('licence') }}" required autocomplete="licence">
+
+                                @error('licence')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="content" class="col-md-4 col-form-label text-md-right">Description</label>
 
                             <div class="col-md-6">
                                 <textarea class="form-control @error('content') is-invalid @enderror" id="content" name="content" rows="3" required>{{ old('content') }}</textarea>
@@ -76,7 +134,7 @@
 
                             <div class="col-md-6">
                                 <div class="needsclick dropzone @error('attachments') is-invalid @enderror" id="attachments-dropzone">
-                
+
                                 </div>
                             </div>
                             @error('attachments')
@@ -99,6 +157,9 @@
         </div>
     </div>
 </div>
+@else
+<script>window.location = "/login";</script>
+@endauth
 @endsection
 
 @section('scripts')

@@ -1,6 +1,5 @@
 @extends('layouts.admin')
 @section('content')
-
 <div class="card">
     <div class="card-header">
         {{ trans('global.create') }} {{ trans('cruds.ticket.title_singular') }}
@@ -10,7 +9,7 @@
         <form action="{{ route("admin.tickets.store") }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
-                <label for="title">{{ trans('cruds.ticket.fields.title') }}*</label>
+                <label for="title">Offender's Name*</label>
                 <input type="text" id="title" name="title" class="form-control" value="{{ old('title', isset($ticket) ? $ticket->title : '') }}" required>
                 @if($errors->has('title'))
                     <em class="invalid-feedback">
@@ -21,8 +20,56 @@
                     {{ trans('cruds.ticket.fields.title_helper') }}
                 </p>
             </div>
+
+            <div class="form-group">
+                <label for="nid" class="col-form-label text-md-right">NID</label>
+                <input id="nid" type="text" class="form-control @error('title') is-invalid @enderror" name="nid" value="{{ old('nid') }}" required autocomplete="nid">
+
+                @error('nid')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+
+            <div class="form-group">
+                <label for="nid" class="col-form-label text-md-right">Location</label>
+
+                <input id="nid" type="text" class="form-control @error('nid') is-invalid @enderror" name="nid" value="{{ old('nid') }}" required autocomplete="nid">
+
+                @error('nid')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+
+            <div class="form-group">
+                <label for="vehicleNum" class="col-form-label text-md-right">Vehicle number</label>
+
+                <input id="vehicleNum" type="text" class="form-control @error('vehicleNum') is-invalid @enderror" name="vehicleNum" value="{{ old('vehicleNum') }}" required autocomplete="vehicleNum">
+
+                @error('vehicleNum')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+
+            <div class="form-group">
+                <label for="licence" class="col-form-label text-md-right">License Number</label>
+
+                <input id="licence" type="text" class="form-control @error('licence') is-invalid @enderror" name="licence" value="{{ old('licence') }}" required autocomplete="licence">
+
+                @error('licence')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+
             <div class="form-group {{ $errors->has('content') ? 'has-error' : '' }}">
-                <label for="content">{{ trans('cruds.ticket.fields.content') }}</label>
+                <label for="content">Description</label>
                 <textarea id="content" name="content" class="form-control ">{{ old('content', isset($ticket) ? $ticket->content : '') }}</textarea>
                 @if($errors->has('content'))
                     <em class="invalid-feedback">
@@ -74,7 +121,7 @@
                 @endif
             </div>
             <div class="form-group {{ $errors->has('category_id') ? 'has-error' : '' }}">
-                <label for="category">{{ trans('cruds.ticket.fields.category') }}*</label>
+                <label for="category">Type of fine*</label>
                 <select name="category_id" id="category" class="form-control select2" required>
                     @foreach($categories as $id => $category)
                         <option value="{{ $id }}" {{ (isset($ticket) && $ticket->category ? $ticket->category->id : old('category_id')) == $id ? 'selected' : '' }}>{{ $category }}</option>
@@ -86,7 +133,7 @@
                     </em>
                 @endif
             </div>
-            <div class="form-group {{ $errors->has('author_name') ? 'has-error' : '' }}">
+            <!-- <div class="form-group {{ $errors->has('author_name') ? 'has-error' : '' }}">
                 <label for="author_name">{{ trans('cruds.ticket.fields.author_name') }}</label>
                 <input type="text" id="author_name" name="author_name" class="form-control" value="{{ old('author_name', isset($ticket) ? $ticket->author_name : '') }}">
                 @if($errors->has('author_name'))
@@ -109,7 +156,7 @@
                 <p class="helper-block">
                     {{ trans('cruds.ticket.fields.author_email_helper') }}
                 </p>
-            </div>
+            </div> -->
             @if(auth()->user()->isAdmin() || auth()->user()->isAgent())
                 <div class="@if(auth()->user()->isAgent()) d-none @endif">
                     <div class="form-group {{ $errors->has('assigned_to_user_id') ? 'has-error' : '' }}">

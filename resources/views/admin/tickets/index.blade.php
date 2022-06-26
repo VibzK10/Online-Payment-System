@@ -140,31 +140,31 @@ $('.card-body').on('change', 'select', function() {
 { data: 'id', name: 'id' },
 {
     data: 'title',
-    name: 'title', 
+    name: 'title',
     render: function ( data, type, row) {
         return '<a href="'+row.view_link+'">'+data+' ('+row.comments_count+')</a>';
     }
 },
-{ 
-  data: 'status_name', 
-  name: 'status.name', 
+{
+  data: 'status_name',
+  name: 'status.name',
   render: function ( data, type, row) {
       return '<span style="color:'+row.status_color+'">'+data+'</span>';
   }
 },
-{ 
-  data: 'priority_name', 
-  name: 'priority.name', 
+{
+  data: 'priority_name',
+  name: 'priority.name',
   render: function ( data, type, row) {
       return '<span style="color:'+row.priority_color+'">'+data+'</span>';
   }
 },
-{ 
-  data: 'category_name', 
-  name: 'category.name', 
+{
+  data: 'category_name',
+  name: 'category.name',
   render: function ( data, type, row) {
       return '<span style="color:'+row.category_color+'">'+data+'</span>';
-  } 
+  }
 },
 { data: 'author_name', name: 'author_name' },
 { data: 'author_email', name: 'author_email' },
@@ -173,7 +173,7 @@ $('.card-body').on('change', 'select', function() {
     ],
     order: [[ 1, 'desc' ]],
     pageLength: 100,
-  };    
+  };
 $(".datatable-Ticket").one("preInit.dt", function () {
  $(".dataTables_filter").after(filters);
 });
