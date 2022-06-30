@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Ticket;
+use App\Category;
 
 class Payment extends Controller
 {
@@ -27,7 +29,7 @@ class Payment extends Controller
     {
 
         // get from db by ticket id
-        $amount = 100;
+        $amount = $this->getPaymentAmountByTicketId($ticketId);
 
         $paymentDetails = [
             'id' => $ticketId,
@@ -37,4 +39,11 @@ class Payment extends Controller
         return view('tickets.payment', compact('paymentDetails'));
     }
 
+    public function getPaymentAmountByTicketId(Int $TicketId){
+    //   return Category::addSelect(['amount' => Ticket::select('category_id')
+    //     ->where('id', $TicketId)
+    //     ->limit(1)
+    //     ])->get();
+        return Ticket::find(1)->category->amount;
+    }
 }

@@ -29,6 +29,9 @@
                             {{ trans('cruds.category.fields.name') }}
                         </th>
                         <th>
+                            Amount
+                        </th>
+                        <th>
                             {{ trans('cruds.category.fields.color') }}
                         </th>
                         <th>
@@ -47,6 +50,9 @@
                             </td>
                             <td>
                                 {{ $category->name ?? '' }}
+                            </td>
+                            <td>
+                                {{ $category->amount ?? '' }}
                             </td>
                             <td style="background-color:{{ $category->color ?? '#FFFFFF' }}"></td>
                             <td>

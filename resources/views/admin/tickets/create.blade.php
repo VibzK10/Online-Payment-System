@@ -21,6 +21,19 @@
                 </p>
             </div>
 
+            <div class="form-group {{ $errors->has('author_email') ? 'has-error' : '' }}">
+                <label for="author_email">Offender's Email</label>
+                <input type="text" id="author_email" name="author_email" class="form-control" value="{{ old('author_email', isset($ticket) ? $ticket->author_email : '') }}">
+                @if($errors->has('author_email'))
+                    <em class="invalid-feedback">
+                        {{ $errors->first('author_email') }}
+                    </em>
+                @endif
+                <p class="helper-block">
+                    {{ trans('cruds.ticket.fields.author_email_helper') }}
+                </p>
+            </div>
+
             <div class="form-group">
                 <label for="nid" class="col-form-label text-md-right">NID</label>
                 <input id="nid" type="text" class="form-control @error('title') is-invalid @enderror" name="nid" value="{{ old('nid') }}" required autocomplete="nid">
@@ -33,11 +46,11 @@
             </div>
 
             <div class="form-group">
-                <label for="nid" class="col-form-label text-md-right">Location</label>
+                <label for="location" class="col-form-label text-md-right">Location</label>
 
-                <input id="nid" type="text" class="form-control @error('nid') is-invalid @enderror" name="nid" value="{{ old('nid') }}" required autocomplete="nid">
+                <input id="location" type="text" class="form-control @error('location') is-invalid @enderror" name="location" value="{{ old('location') }}" required autocomplete="location">
 
-                @error('nid')
+                @error('location')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
@@ -144,19 +157,8 @@
                 <p class="helper-block">
                     {{ trans('cruds.ticket.fields.author_name_helper') }}
                 </p>
-            </div>
-            <div class="form-group {{ $errors->has('author_email') ? 'has-error' : '' }}">
-                <label for="author_email">{{ trans('cruds.ticket.fields.author_email') }}</label>
-                <input type="text" id="author_email" name="author_email" class="form-control" value="{{ old('author_email', isset($ticket) ? $ticket->author_email : '') }}">
-                @if($errors->has('author_email'))
-                    <em class="invalid-feedback">
-                        {{ $errors->first('author_email') }}
-                    </em>
-                @endif
-                <p class="helper-block">
-                    {{ trans('cruds.ticket.fields.author_email_helper') }}
-                </p>
             </div> -->
+
             @if(auth()->user()->isAdmin() || auth()->user()->isAgent())
                 <div class="@if(auth()->user()->isAgent()) d-none @endif">
                     <div class="form-group {{ $errors->has('assigned_to_user_id') ? 'has-error' : '' }}">

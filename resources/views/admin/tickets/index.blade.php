@@ -37,10 +37,10 @@
                         {{ trans('cruds.ticket.fields.category') }}
                     </th>
                     <th>
-                        {{ trans('cruds.ticket.fields.author_name') }}
+                        Vehicle Number
                     </th>
                     <th>
-                        {{ trans('cruds.ticket.fields.author_email') }}
+                        Offender's Email
                     </th>
                     <th>
                         {{ trans('cruds.ticket.fields.assigned_to_user') }}
@@ -166,7 +166,7 @@ $('.card-body').on('change', 'select', function() {
       return '<span style="color:'+row.category_color+'">'+data+'</span>';
   }
 },
-{ data: 'author_name', name: 'author_name' },
+{ data: 'vehicleNum', name: 'vehicleNum' },
 { data: 'author_email', name: 'author_email' },
 { data: 'assigned_to_user_name', name: 'assigned_to_user.name' },
 { data: 'actions', name: '{{ trans('global.actions') }}' }

@@ -17,7 +17,7 @@
                         <tbody>
                             <tr>
                                 <th>
-                                    {{ trans('cruds.ticket.fields.title') }}
+                                    Offender's Name
                                 </th>
                                 <td>
                                     {{ $ticket->title }}
@@ -25,10 +25,57 @@
                             </tr>
                             <tr>
                                 <th>
-                                    {{ trans('cruds.ticket.fields.content') }}
+                                    Offender's Email
+                                </th>
+                                <td>
+                                    {{ $ticket->author_email }}
+                                    {!! $ticket->content !!}
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                   NID
+                                </th>
+                                <td>
+                                    {{ $ticket->nid }}
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                Location
+                                </th>
+                                <td>
+                                    {{ $ticket->location }}
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                Vehicle number
+                                </th>
+                                <td>
+                                    {{ $ticket->vehicleNum }}
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                License Number
+                                </th>
+                                <td>
+                                    {{ $ticket->license }}
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Description
                                 </th>
                                 <td>
                                     {!! $ticket->content !!}
+
                                 </td>
                             </tr>
                             <tr>
@@ -49,22 +96,7 @@
                                     {{ $ticket->status->name ?? '' }}
                                 </td>
                             </tr>
-                            <tr>
-                                <th>
-                                    {{ trans('cruds.ticket.fields.author_name') }}
-                                </th>
-                                <td>
-                                    {{ $ticket->author_name }}
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>
-                                    {{ trans('cruds.ticket.fields.author_email') }}
-                                </th>
-                                <td>
-                                    {{ $ticket->author_email }}
-                                </td>
-                            </tr>
+                            @auth
                             <tr>
                                 <th>
                                     {{ trans('cruds.ticket.fields.comments') }}
@@ -89,12 +121,13 @@
                                     @endforelse
                                 </td>
                             </tr>
+                            @endauth
                         </tbody>
                     </table>
                     <form action="{{ route('tickets.storeComment', $ticket->id) }}" method="POST">
                         @csrf
                         <div class="form-group">
-                            <label for="comment_text">Leave a comment</label>
+                            <label for="comment_text">If you want to dispute this ticket, comment your reasons down below: </label>
                             <textarea class="form-control @error('comment_text') is-invalid @enderror" id="comment_text" name="comment_text" rows="3" required></textarea>
                             @error('comment_text')
                                 <span class="invalid-feedback" role="alert">
@@ -105,6 +138,7 @@
                         <button type="submit" class="btn btn-primary">@lang('global.submit')</button>
                         <a class="btn btn-success float-right" href="{{ route("tickets.makePayment", $ticket->id) }}"> Proceed to payment </a>
                     </form>
+
                 </div>
             </div>
         </div>

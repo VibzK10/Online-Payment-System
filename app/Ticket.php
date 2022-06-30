@@ -40,6 +40,10 @@ class Ticket extends Model implements HasMedia
         'author_name',
         'author_email',
         'assigned_to_user_id',
+        'nid',
+        'location',
+        'vehicleNum',
+        'licence',
     ];
 
     public static function boot()
@@ -81,6 +85,11 @@ class Ticket extends Model implements HasMedia
         return $this->belongsTo(Category::class, 'category_id');
     }
 
+    public function amount()
+    {
+        return $this->belongsTo(Category::class, 'amount');
+    }
+
     public function assigned_to_user()
     {
         return $this->belongsTo(User::class, 'assigned_to_user_id');
@@ -117,7 +126,7 @@ class Ticket extends Model implements HasMedia
                     })
                     ->orWhereHas('tickets', function ($q) {
                         return $q->whereId($this->id);
-                    }); 
+                    });
                 });
             })
             ->when(!$comment->user_id && !$this->assigned_to_user_id, function ($q) {
