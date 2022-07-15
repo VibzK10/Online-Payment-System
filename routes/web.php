@@ -14,6 +14,7 @@ Auth::routes(['register' => false]);
 Route::post('tickets/media', 'TicketController@storeMedia')->name('tickets.storeMedia');
 Route::post('tickets/comment/{ticket}', 'TicketController@storeComment')->name('tickets.storeComment');
 Route::get('tickets/payment/{ticket}', 'Payment@show')->name('tickets.makePayment');
+Route::post('tickets/payment/{ticket}', 'Payment@show')->name('tickets.postOTP');
 Route::resource('tickets', 'TicketController')->only(['show', 'create', 'store']);
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {

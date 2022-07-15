@@ -29,7 +29,6 @@
                                 </th>
                                 <td>
                                     {{ $ticket->author_email }}
-                                    {!! $ticket->content !!}
 
                                 </td>
                             </tr>
@@ -62,10 +61,10 @@
                             </tr>
                             <tr>
                                 <th>
-                                License Number
+                                licence Number
                                 </th>
                                 <td>
-                                    {{ $ticket->license }}
+                                    {{ $ticket->licence }}
 
                                 </td>
                             </tr>

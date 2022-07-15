@@ -106,6 +106,8 @@ class ComposerStaticInit98b2be10a652b4319d276bc57de5b1cb
             'Spatie\\MediaLibrary\\' => 20,
             'Spatie\\Image\\' => 13,
             'Spatie\\ImageOptimizer\\' => 22,
+            'Seshac\\Otp\\Database\\Factories\\' => 30,
+            'Seshac\\Otp\\' => 11,
         ),
         'R' => 
         array (
@@ -377,6 +379,14 @@ class ComposerStaticInit98b2be10a652b4319d276bc57de5b1cb
         'Spatie\\ImageOptimizer\\' => 
         array (
             0 => __DIR__ . '/..' . '/spatie/image-optimizer/src',
+        ),
+        'Seshac\\Otp\\Database\\Factories\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/seshac/otp-generator/database/factories',
+        ),
+        'Seshac\\Otp\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/seshac/otp-generator/src',
         ),
         'Ramsey\\Uuid\\' => 
         array (
@@ -5102,6 +5112,10 @@ class ComposerStaticInit98b2be10a652b4319d276bc57de5b1cb
         'SebastianBergmann\\Type\\UnknownType' => __DIR__ . '/..' . '/sebastian/type/src/UnknownType.php',
         'SebastianBergmann\\Type\\VoidType' => __DIR__ . '/..' . '/sebastian/type/src/VoidType.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
+        'Seshac\\Otp\\Models\\Otp' => __DIR__ . '/..' . '/seshac/otp-generator/src/Models/Otp.php',
+        'Seshac\\Otp\\Otp' => __DIR__ . '/..' . '/seshac/otp-generator/src/Otp.php',
+        'Seshac\\Otp\\OtpGenerator' => __DIR__ . '/..' . '/seshac/otp-generator/src/OtpGenerator.php',
+        'Seshac\\Otp\\OtpServiceProvider' => __DIR__ . '/..' . '/seshac/otp-generator/src/OtpServiceProvider.php',
         'SessionUpdateTimestampHandlerInterface' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/SessionUpdateTimestampHandlerInterface.php',
         'Spatie\\ImageOptimizer\\DummyLogger' => __DIR__ . '/..' . '/spatie/image-optimizer/src/DummyLogger.php',
         'Spatie\\ImageOptimizer\\Image' => __DIR__ . '/..' . '/spatie/image-optimizer/src/Image.php',

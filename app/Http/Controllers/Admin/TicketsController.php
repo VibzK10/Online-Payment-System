@@ -16,6 +16,7 @@ use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Yajra\DataTables\Facades\DataTables;
+use Mail;
 
 class TicketsController extends Controller
 {
@@ -125,13 +126,38 @@ class TicketsController extends Controller
 
     public function store(StoreTicketRequest $request)
     {
+
         $ticket = Ticket::create($request->all());
 
         foreach ($request->input('attachments', []) as $file) {
             $ticket->addMedia(storage_path('tmp/uploads/' . $file))->toMediaCollection('attachments');
         }
 
+        if($ticket){
+            $this->notifyOffender($ticket);
+        }
+
         return redirect()->route('admin.tickets.index');
+    }
+
+    public function notifyOffender($ticket){
+
+        $pageData['id'] = $ticket->id;
+        $pageData['name'] = $ticket->title;
+        $pageData['desc'] = isset($ticket->content) ? $ticket->content : '';
+        $pageData['typeOfFine'] = isset($ticket->category) ? $ticket->category->name : '';
+        $pageData['vehicleNum'] = isset($ticket->vehicleNum) ? $ticket->vehicleNum : '';
+        $pageData['nid'] = isset($ticket->nid) ? $ticket->nid : '';
+
+        $emailData['email'] = $ticket->author_email;
+        $emailData['offenderName'] = $ticket->title;
+        $emailData['id'] = $ticket->id;
+
+        Mail::send('emails.notify', $pageData, function($message) use ($emailData) {
+            $message->to($emailData['email'], $emailData['offenderName'])->subject
+               ('FinePay - Your fine has been processed Ticket #'.$emailData['id']);
+            $message->from('no-reply@finepay.com','FinePay');
+         });
     }
 
     public function edit(Ticket $ticket)

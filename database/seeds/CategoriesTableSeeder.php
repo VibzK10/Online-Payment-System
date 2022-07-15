@@ -14,14 +14,15 @@ class CategoriesTableSeeder extends Seeder
     {
         $faker = Faker\Factory::create();
         $categories = [
-            "Uncategorized", "Billing/Payments", "Technical question"
+            "Drink and drive", "No license", "Expired insurance"
         ];
 
         foreach($categories as $category)
         {
             Category::create([
                 'name'  => $category,
-                'color' => $faker->hexcolor
+                'color' => $faker->hexcolor,
+                'amount' => rand(1000,5000)
             ]);
         }
     }

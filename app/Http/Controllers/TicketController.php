@@ -31,9 +31,6 @@ class TicketController extends Controller
     public function store(Request $request)
     {
 
-        echo $this->session->userdata('name');
-        die;
-
         $request->validate([
             'title'         => 'required',
             'content'       => 'required',

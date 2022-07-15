@@ -38,49 +38,49 @@
 
             <div class="form-group">
                 <label for="nid" class="col-form-label text-md-right">NID</label>
-                <input id="nid" type="text" class="form-control @error('title') is-invalid @enderror" name="nid" value="{{ old('nid') }}" required autocomplete="nid">
+                <input id="nid" type="text" class="form-control" name="nid" value="{{ old('nid', isset($ticket) ? $ticket->nid : '') }}" required autocomplete="nid">
 
-                @error('nid')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
+                @if($errors->has('nid'))
+                    <em class="invalid-feedback">
+                        {{ $errors->first('nid') }}
+                    </em>
+                @endif
             </div>
 
             <div class="form-group">
-                <label for="location" class="col-form-label text-md-right">Location</label>
+                <label for="location" class="col-form-label text-md-right">Location {{{ old('location') }}}</label>
 
-                <input id="location" type="text" class="form-control @error('location') is-invalid @enderror" name="location" value="{{ old('location') }}" required autocomplete="location">
+                <input id="location" type="text" class="form-control @error('location') is-invalid @enderror" value="{{ old('location', isset($ticket) ? $ticket->location : '') }}" required autocomplete="location">
 
-                @error('location')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
+                @if($errors->has('location'))
+                    <em class="invalid-feedback">
+                        {{ $errors->first('location') }}
+                    </em>
+                @endif
             </div>
 
             <div class="form-group">
                 <label for="vehicleNum" class="col-form-label text-md-right">Vehicle number</label>
 
-                <input id="vehicleNum" type="text" class="form-control @error('vehicleNum') is-invalid @enderror" name="vehicleNum" value="{{ old('vehicleNum') }}" required autocomplete="vehicleNum">
+                <input id="vehicleNum" type="text" class="form-control " value="{{ old('vehicleNum', isset($ticket) ? $ticket->vehicleNum : '') }}" required autocomplete="vehicleNum">
 
-                @error('vehicleNum')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
+                @if($errors->has('vehicleNum'))
+                    <em class="invalid-feedback">
+                        {{ $errors->first('vehicleNum') }}
+                    </em>
+                @endif
             </div>
 
             <div class="form-group">
-                <label for="licence" class="col-form-label text-md-right">License Number</label>
+                <label for="licence" class="col-form-label text-md-right">licence Number</label>
 
-                <input id="licence" type="text" class="form-control @error('licence') is-invalid @enderror" name="licence" value="{{ old('licence') }}" required autocomplete="licence">
+                <input id="vehiclicenceleNum" type="text" class="form-control " value="{{ old('licence', isset($ticket) ? $ticket->licence : '') }}" required autocomplete="licence">
 
-                @error('licence')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
+                @if($errors->has('licence'))
+                    <em class="invalid-feedback">
+                        {{ $errors->first('licence') }}
+                    </em>
+                @endif
             </div>
             <div class="form-group {{ $errors->has('content') ? 'has-error' : '' }}">
                 <label for="content">Description</label>

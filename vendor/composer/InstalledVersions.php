@@ -25,12 +25,12 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-main',
+    'version' => 'dev-main',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => '2092ab02ff30dcf27ac8a9401c1a0aa4a8d4aa46',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -500,12 +500,12 @@ private static $installed = array (
     ),
     'laravel/laravel' => 
     array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => '2092ab02ff30dcf27ac8a9401c1a0aa4a8d4aa46',
     ),
     'laravel/passport' => 
     array (
@@ -949,8 +949,8 @@ private static $installed = array (
     array (
       'provided' => 
       array (
-        0 => '1.0',
-        1 => '1.0.0',
+        0 => '1.0.0',
+        1 => '1.0',
       ),
     ),
     'psr/simple-cache' => 
@@ -1157,6 +1157,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '626586115d0ed31cb71483be55beb759b5af5a3c',
+    ),
+    'seshac/otp-generator' => 
+    array (
+      'pretty_version' => '0.0.7',
+      'version' => '0.0.7.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '315ec0502caaf7d23616ecd4b1abb5e8e352a0e1',
     ),
     'spatie/image' => 
     array (
