@@ -14,7 +14,7 @@ class CategoriesTableSeeder extends Seeder
     {
         $faker = Faker\Factory::create();
         $categories = [
-            "Drink and drive", "No license", "Expired insurance"
+            "Drink and drive", "No license", "Expired insurance" , "No seatbelt/helmet" , "Over-speeding"
         ];
 
         foreach($categories as $category)
