@@ -120,7 +120,7 @@
                     </em>
                 @endif
             </div>
-            <div class="form-group {{ $errors->has('priority_id') ? 'has-error' : '' }}">
+            <!-- <div class="form-group {{ $errors->has('priority_id') ? 'has-error' : '' }}">
                 <label for="priority">{{ trans('cruds.ticket.fields.priority') }}*</label>
                 <select name="priority_id" id="priority" class="form-control select2" required>
                     @foreach($priorities as $id => $priority)
@@ -132,7 +132,7 @@
                         {{ $errors->first('priority_id') }}
                     </em>
                 @endif
-            </div>
+            </div> -->
             <div class="form-group {{ $errors->has('category_id') ? 'has-error' : '' }}">
                 <label for="category">Type of fine*</label>
                 <select name="category_id" id="category" class="form-control select2" required>

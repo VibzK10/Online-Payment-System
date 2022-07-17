@@ -26,10 +26,10 @@ class StoreTicketRequest extends FormRequest
                 'required',
                 'integer',
             ],
-            'priority_id' => [
-                'required',
-                'integer',
-            ],
+            // 'priority_id' => [
+            //     'required',
+            //     'integer',
+            // ],
             'category_id' => [
                 'required',
                 'integer',

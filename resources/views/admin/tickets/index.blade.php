@@ -30,9 +30,9 @@
                     <th>
                         {{ trans('cruds.ticket.fields.status') }}
                     </th>
-                    <th>
+                    <!-- <th>
                         {{ trans('cruds.ticket.fields.priority') }}
-                    </th>
+                    </th> -->
                     <th>
                         {{ trans('cruds.ticket.fields.category') }}
                     </th>
@@ -58,6 +58,7 @@
 @endsection
 @section('scripts')
 @parent
+
 <script>
     $(function () {
 let filters = `
@@ -70,14 +71,7 @@ let filters = `
       @endforeach
     </select>
   </div>
-  <div class="form-group mx-sm-3 mb-2">
-    <select class="form-control" name="priority">
-      <option value="">All priorities</option>
-      @foreach($priorities as $priority)
-        <option value="{{ $priority->id }}"{{ request('priority') == $priority->id ? 'selected' : '' }}>{{ $priority->name }}</option>
-      @endforeach
-    </select>
-  </div>
+
   <div class="form-group mx-sm-3 mb-2">
     <select class="form-control" name="category">
       <option value="">All categories</option>
@@ -152,13 +146,13 @@ $('.card-body').on('change', 'select', function() {
       return '<span style="color:'+row.status_color+'">'+data+'</span>';
   }
 },
-{
-  data: 'priority_name',
-  name: 'priority.name',
-  render: function ( data, type, row) {
-      return '<span style="color:'+row.priority_color+'">'+data+'</span>';
-  }
-},
+// {
+//   data: 'priority_name',
+//   name: 'priority.name',
+//   render: function ( data, type, row) {
+//       return '<span style="color:'+row.priority_color+'">'+data+'</span>';
+//   }
+// },
 {
   data: 'category_name',
   name: 'category.name',
