@@ -177,7 +177,7 @@
                 </div>
             @endif
             <div>
-                <input class="btn btn-danger" type="submit" value="{{ trans('global.save') }}">
+                <input class="btn btn-danger" type="submit" value="Submit">
             </div>
         </form>
 
