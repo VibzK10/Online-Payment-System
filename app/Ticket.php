@@ -118,16 +118,16 @@ class Ticket extends Model implements HasMedia
     {
         $users = \App\User::where(function ($q) {
                 $q->whereHas('roles', function ($q) {
-                    return $q->where('title', 'Agent');
-                })
-                ->where(function ($q) {
-                    $q->whereHas('comments', function ($q) {
-                        return $q->whereTicketId($this->id);
-                    })
-                    ->orWhereHas('tickets', function ($q) {
-                        return $q->whereId($this->id);
-                    });
+                    return $q->where('title', 'Admin');
                 });
+                // ->where(function ($q) {
+                //     $q->whereHas('comments', function ($q) {
+                //         return $q->whereTicketId($this->id);
+                //     })
+                //     ->orWhereHas('tickets', function ($q) {
+                //         return $q->whereId($this->id);
+                //     });
+                // });
             })
             ->when(!$comment->user_id && !$this->assigned_to_user_id, function ($q) {
                 $q->orWhereHas('roles', function ($q) {
@@ -138,6 +138,7 @@ class Ticket extends Model implements HasMedia
                 $q->where('id', '!=', $comment->user_id);
             })
             ->get();
+
         $notification = new CommentEmailNotification($comment);
 
         Notification::send($users, $notification);
