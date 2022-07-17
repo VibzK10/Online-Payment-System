@@ -12,7 +12,7 @@
                     </a>
                 </li>
             @endcan
-            @can('user_management_access')
+            <!-- @can('user_management_access')
                 <li class="nav-item nav-dropdown">
                     <a class="nav-link  nav-dropdown-toggle" href="#">
                         <i class="fa-fw fas fa-users nav-icon">
@@ -51,7 +51,7 @@
                                 </a>
                             </li>
                         @endcan
-                        <!-- @can('audit_log_access')
+                        @can('audit_log_access')
                             <li class="nav-item">
                                 <a href="{{ route("admin.audit-logs.index") }}" class="nav-link {{ request()->is('admin/audit-logs') || request()->is('admin/audit-logs/*') ? 'active' : '' }}">
                                     <i class="fa-fw fas fa-file-alt nav-icon">
@@ -60,11 +60,11 @@
                                     {{ trans('cruds.auditLog.title') }}
                                 </a>
                             </li>
-                        @endcan -->
+                        @endcan
                     </ul>
                 </li>
-            @endcan
-            @can('status_access')
+            @endcan -->
+            <!-- @can('status_access')
                 <li class="nav-item">
                     <a href="{{ route("admin.statuses.index") }}" class="nav-link {{ request()->is('admin/statuses') || request()->is('admin/statuses/*') ? 'active' : '' }}">
                         <i class="fa-fw fas fa-cogs nav-icon">
@@ -73,8 +73,8 @@
                         {{ trans('cruds.status.title') }}
                     </a>
                 </li>
-            @endcan
-            @can('priority_access')
+            @endcan -->
+            <!-- @can('priority_access')
                 <li class="nav-item">
                     <a href="{{ route("admin.priorities.index") }}" class="nav-link {{ request()->is('admin/priorities') || request()->is('admin/priorities/*') ? 'active' : '' }}">
                         <i class="fa-fw fas fa-cogs nav-icon">
@@ -83,8 +83,8 @@
                         {{ trans('cruds.priority.title') }}
                     </a>
                 </li>
-            @endcan
-            @can('category_access')
+            @endcan -->
+            <!-- @can('category_access')
                 <li class="nav-item">
                     <a href="{{ route("admin.categories.index") }}" class="nav-link {{ request()->is('admin/categories') || request()->is('admin/categories/*') ? 'active' : '' }}">
                         <i class="fa-fw fas fa-tags nav-icon">
@@ -93,7 +93,7 @@
                         {{ trans('cruds.category.title') }}
                     </a>
                 </li>
-            @endcan
+            @endcan -->
             @can('ticket_access')
                 <li class="nav-item">
                     <a href="{{ route("admin.tickets.index") }}" class="nav-link {{ request()->is('admin/tickets') || request()->is('admin/tickets/*') ? 'active' : '' }}">

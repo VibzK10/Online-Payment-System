@@ -198,7 +198,7 @@ class TicketsController extends Controller
         }
 
         if(isset($ticket->status_id)){
-            if($request->status_id == '3'){
+            if($ticket->status_id == '3'){
                 $this->notifyOffender($ticket);
             }
         }
