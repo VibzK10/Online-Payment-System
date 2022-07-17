@@ -133,10 +133,6 @@ class TicketsController extends Controller
             $ticket->addMedia(storage_path('tmp/uploads/' . $file))->toMediaCollection('attachments');
         }
 
-        if($ticket){
-            $this->notifyOffender($ticket);
-        }
-
         return redirect()->route('admin.tickets.index');
     }
 
@@ -198,6 +194,12 @@ class TicketsController extends Controller
         foreach ($request->input('attachments', []) as $file) {
             if (count($media) === 0 || !in_array($file, $media)) {
                 $ticket->addMedia(storage_path('tmp/uploads/' . $file))->toMediaCollection('attachments');
+            }
+        }
+
+        if(isset($ticket->status_id)){
+            if($request->status_id == '3'){
+                $this->notifyOffender($ticket);
             }
         }
 
