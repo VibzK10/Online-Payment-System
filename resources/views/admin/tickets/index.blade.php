@@ -34,7 +34,7 @@
                         {{ trans('cruds.ticket.fields.priority') }}
                     </th> -->
                     <th>
-                        {{ trans('cruds.ticket.fields.category') }}
+                        Type of fine
                     </th>
                     <th>
                         Vehicle Number

@@ -30,8 +30,8 @@
 
     <!-- <input type="sumbit" value="Submit" class="btn btn-primary" > -->
 </form>
-<div class="col-md-12 text-center">
+<!-- <div class="col-md-12 text-center">
     <a class="resendOTP p-3 pe-cursor">Resend OTP</a>
-</div>
+</div> -->
 @endsection
 

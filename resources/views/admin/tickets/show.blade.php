@@ -33,7 +33,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.ticket.fields.title') }}
+                           Offender's name
                         </th>
                         <td>
                             {{ $ticket->title }}
@@ -41,7 +41,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.ticket.fields.content') }}
+                            Description
                         </th>
                         <td>
                             {!! $ticket->content !!}
@@ -65,33 +65,33 @@
                             {{ $ticket->status->name ?? '' }}
                         </td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <th>
                             {{ trans('cruds.ticket.fields.priority') }}
                         </th>
                         <td>
                             {{ $ticket->priority->name ?? '' }}
                         </td>
-                    </tr>
+                    </tr> -->
                     <tr>
                         <th>
-                            {{ trans('cruds.ticket.fields.category') }}
+                            Type of fine
                         </th>
                         <td>
                             {{ $ticket->category->name ?? '' }}
                         </td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <th>
                             {{ trans('cruds.ticket.fields.author_name') }}
                         </th>
                         <td>
                             {{ $ticket->author_name }}
                         </td>
-                    </tr>
+                    </tr> -->
                     <tr>
                         <th>
-                            {{ trans('cruds.ticket.fields.author_email') }}
+                            Offender's email
                         </th>
                         <td>
                             {{ $ticket->author_email }}

@@ -183,3 +183,8 @@ table.dataTable thead .sorting_desc {
 .pe-cursor{
     cursor:pointer;
 }
+ul.pagination, #DataTables_Table_0_length, #DataTables_Table_0_filter, #filtersForm, #DataTables_Table_0_info{
+	display:none;
+}
+
+

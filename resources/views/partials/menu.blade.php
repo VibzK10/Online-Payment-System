@@ -104,7 +104,7 @@
                     </a>
                 </li>
             @endcan
-            @can('comment_access')
+            <!-- @can('comment_access')
                 <li class="nav-item">
                     <a href="{{ route("admin.comments.index") }}" class="nav-link {{ request()->is('admin/comments') || request()->is('admin/comments/*') ? 'active' : '' }}">
                         <i class="fa-fw fas fa-comment nav-icon">
@@ -113,7 +113,7 @@
                         {{ trans('cruds.comment.title') }}
                     </a>
                 </li>
-            @endcan
+            @endcan -->
             <li class="nav-item">
                 <a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
                     <i class="nav-icon fas fa-fw fa-sign-out-alt">

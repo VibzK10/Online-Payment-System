@@ -125,7 +125,7 @@
                     </table>
                     <form action="{{ route('tickets.storeComment', $ticket->id) }}" method="POST">
                         @csrf
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label for="comment_text">If you want to dispute this ticket, comment your reasons down below: </label>
                             <textarea class="form-control @error('comment_text') is-invalid @enderror" id="comment_text" name="comment_text" rows="3" required></textarea>
                             @error('comment_text')
@@ -134,7 +134,7 @@
                                 </span>
                             @enderror
                         </div>
-                        <button type="submit" class="btn btn-primary">@lang('global.submit')</button>
+                        <button type="submit" class="btn btn-primary">@lang('global.submit')</button> -->
                         <a class="btn btn-success float-right" href="{{ route("tickets.makePayment", $ticket->id) }}"> Proceed to payment </a>
                     </form>
 
