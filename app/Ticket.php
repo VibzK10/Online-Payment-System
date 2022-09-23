@@ -44,6 +44,7 @@ class Ticket extends Model implements HasMedia
         'location',
         'vehicleNum',
         'licence',
+        'mobile_number'
     ];
 
     public static function boot()

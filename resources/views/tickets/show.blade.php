@@ -52,7 +52,7 @@
                             </tr>
                             <tr>
                                 <th>
-                                Vehicle number
+                                Vehicle Number
                                 </th>
                                 <td>
                                     {{ $ticket->vehicleNum }}
@@ -94,7 +94,17 @@
                                 <td>
                                     {{ $ticket->status->name ?? '' }}
                                 </td>
+                                
                             </tr>
+                            <tr>
+                                <th>
+                                    Amount To Pay
+                                </th>
+                                <td>
+                                    {{ $ticket->price ?? '' }}
+                                </td>
+                            </tr>
+
                             @auth
                             <tr>
                                 <th>

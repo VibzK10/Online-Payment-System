@@ -183,3 +183,12 @@ table.dataTable thead .sorting_desc {
 .pe-cursor{
     cursor:pointer;
 }
+
+
+#forget_password{
+	display:none;
+}
+
+#rememberMe{
+	display:none;
+}

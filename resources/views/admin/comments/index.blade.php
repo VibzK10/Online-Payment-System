@@ -1,13 +1,13 @@
 @extends('layouts.admin')
 @section('content')
 @can('comment_create')
-    <div style="margin-bottom: 10px;" class="row">
+    <!-- <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route("admin.comments.create") }}">
                 {{ trans('global.add') }} {{ trans('cruds.comment.title_singular') }}
             </a>
         </div>
-    </div>
+    </div> -->
 @endcan
 <div class="card">
     <div class="card-header">
@@ -26,13 +26,13 @@
                             {{ trans('cruds.comment.fields.id') }}
                         </th>
                         <th>
-                            {{ trans('cruds.comment.fields.ticket') }}
+                            Offender's Name
                         </th>
-                        <th>
+                        <!-- <th>
                             {{ trans('cruds.comment.fields.author_name') }}
-                        </th>
+                        </th> -->
                         <th>
-                            {{ trans('cruds.comment.fields.author_email') }}
+                            Offender's Email
                         </th>
                         <th>
                             {{ trans('cruds.comment.fields.user') }}
@@ -57,11 +57,11 @@
                             <td>
                                 {{ $comment->ticket->title ?? '' }}
                             </td>
-                            <td>
+                            <!-- <td>
                                 {{ $comment->author_name ?? '' }}
-                            </td>
+                            </td> -->
                             <td>
-                                {{ $comment->author_email ?? '' }}
+                                 {{ $comment->author_email ?? '' }}
                             </td>
                             <td>
                                 {{ $comment->user->name ?? '' }}
@@ -83,11 +83,11 @@
                                 @endcan
 
                                 @can('comment_delete')
-                                    <form action="{{ route('admin.comments.destroy', $comment->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
+                                    <!-- <form action="{{ route('admin.comments.destroy', $comment->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
-                                    </form>
+                                    </form> -->
                                 @endcan
 
                             </td>
@@ -134,7 +134,7 @@
       }
     }
   }
-  dtButtons.push(deleteButton)
+//   dtButtons.push(deleteButton)
 @endcan
 
   $.extend(true, $.fn.dataTable.defaults, {

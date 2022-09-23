@@ -34,7 +34,7 @@
                         {{ trans('cruds.ticket.fields.priority') }}
                     </th> -->
                     <th>
-                        {{ trans('cruds.ticket.fields.category') }}
+                        Type of fine
                     </th>
                     <th>
                         Vehicle Number
@@ -74,7 +74,7 @@ let filters = `
 
   <div class="form-group mx-sm-3 mb-2">
     <select class="form-control" name="category">
-      <option value="">All categories</option>
+      <option value="">All Types of fines</option>
       @foreach($categories as $category)
         <option value="{{ $category->id }}"{{ request('category') == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
       @endforeach

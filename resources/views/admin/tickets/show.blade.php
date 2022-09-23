@@ -33,7 +33,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.ticket.fields.title') }}
+                           Offender Name
                         </th>
                         <td>
                             {{ $ticket->title }}
@@ -65,14 +65,14 @@
                             {{ $ticket->status->name ?? '' }}
                         </td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <th>
                             {{ trans('cruds.ticket.fields.priority') }}
                         </th>
                         <td>
                             {{ $ticket->priority->name ?? '' }}
                         </td>
-                    </tr>
+                    </tr> -->
                     <tr>
                         <th>
                             {{ trans('cruds.ticket.fields.category') }}
@@ -81,14 +81,14 @@
                             {{ $ticket->category->name ?? '' }}
                         </td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <th>
                             {{ trans('cruds.ticket.fields.author_name') }}
                         </th>
                         <td>
                             {{ $ticket->author_name }}
                         </td>
-                    </tr>
+                    </tr> -->
                     <tr>
                         <th>
                             {{ trans('cruds.ticket.fields.author_email') }}

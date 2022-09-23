@@ -101,7 +101,7 @@ class TicketsController extends Controller
         $priorities = Priority::all();
         $statuses = Status::all();
         $categories = Category::all();
-
+        
         return view('admin.tickets.index', compact('priorities', 'statuses', 'categories'));
     }
 

@@ -89,7 +89,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="vehicleNum" class="col-md-4 col-form-label text-md-right">Vehicle number</label>
+                            <label for="vehicleNum" class="col-md-4 col-form-label text-md-right">Vehicle Number</label>
 
                             <div class="col-md-6">
                                 <input id="vehicleNum" type="text" class="form-control @error('vehicleNum') is-invalid @enderror" name="vehicleNum" value="{{ old('vehicleNum') }}" required autocomplete="vehicleNum">

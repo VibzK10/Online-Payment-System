@@ -48,7 +48,7 @@
                     </div>
 
                     <div class="input-group mb-4">
-                        <div class="form-check checkbox">
+                        <div class="form-check checkbox" id="rememberMe">
                             <input class="form-check-input" name="remember" type="checkbox" id="remember" style="vertical-align: middle;" />
                             <label class="form-check-label" for="remember" style="vertical-align: middle;">
                                 {{ trans('global.remember_me') }}
@@ -62,7 +62,7 @@
                                 {{ trans('global.login') }}
                             </button>
                         </div>
-                        <div class="col-6 text-right">
+                        <div class="col-6 text-right" id="forget_password">
                             @if(Route::has('password.request'))
                                 <a class="btn btn-link px-0" href="{{ route('password.request') }}">
                                     {{ trans('global.forgot_password') }}

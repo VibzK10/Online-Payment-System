@@ -58,7 +58,7 @@
             </div>
 
             <div class="form-group">
-                <label for="vehicleNum" class="col-form-label text-md-right">Vehicle number</label>
+                <label for="vehicleNum" class="col-form-label text-md-right">Vehicle Number</label>
 
                 <input id="vehicleNum" type="text" class="form-control @error('vehicleNum') is-invalid @enderror" name="vehicleNum" value="{{ old('vehicleNum') }}" required autocomplete="vehicleNum">
 
@@ -146,18 +146,16 @@
                     </em>
                 @endif
             </div>
-            <!-- <div class="form-group {{ $errors->has('author_name') ? 'has-error' : '' }}">
-                <label for="author_name">{{ trans('cruds.ticket.fields.author_name') }}</label>
-                <input type="text" id="author_name" name="author_name" class="form-control" value="{{ old('author_name', isset($ticket) ? $ticket->author_name : '') }}">
-                @if($errors->has('author_name'))
+            <div class="form-group {{ $errors->has('mobile_number') ? 'has-error' : '' }}">
+                <label for="mobile_number">mobile_number</label>
+                <input type="text" id="mobile_number" name="mobile_number" class="form-control" value="{{ old('mobile_number', isset($ticket) ? $ticket->mobile_number : '') }}">
+                @if($errors->has('mobile_number'))
                     <em class="invalid-feedback">
-                        {{ $errors->first('author_name') }}
+                        {{ $errors->first('mobile_number') }}
                     </em>
                 @endif
-                <p class="helper-block">
-                    {{ trans('cruds.ticket.fields.author_name_helper') }}
-                </p>
-            </div> -->
+            
+            </div>
 
             @if(auth()->user()->isAdmin() || auth()->user()->isAgent())
                 <div class="@if(auth()->user()->isAgent()) d-none @endif">
