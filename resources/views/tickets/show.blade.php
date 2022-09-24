@@ -94,14 +94,14 @@
                                 <td>
                                     {{ $ticket->status->name ?? '' }}
                                 </td>
-                                
+
                             </tr>
                             <tr>
                                 <th>
                                     Amount To Pay
                                 </th>
                                 <td>
-                                    {{ $ticket->price ?? '' }}
+                                    Rs {{ $ticket->category->amount ?? '' }}
                                 </td>
                             </tr>
 

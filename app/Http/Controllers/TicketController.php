@@ -66,6 +66,7 @@ class TicketController extends Controller
     public function show(Ticket $ticket)
     {
         $ticket->load('comments');
+        $ticket->load('category');
 
         return view('tickets.show', compact('ticket'));
     }

@@ -45,6 +45,11 @@
                         {{ $errors->first('nid') }}
                     </em>
                 @endif
+
+                <span class="invalid-feedback has-nid-error" role="alert">
+                    <strong></strong>
+                </span>
+
             </div>
 
             <div class="form-group">
@@ -185,6 +190,31 @@
 
 @section('scripts')
 <script>
+
+      $( document ).ready(function() {
+        $('form').submit(function(e){
+            e.preventDefault();
+            let error = '';
+            let nid = $('#nid').val();
+            const regex = /[a-z|A-Z][0-9]/;
+            if(regex.test(nid) && nid.length == 14){
+                e.currentTarget.submit();
+            }else{
+                if(nid.length < 14){
+                    error = 'Your NID should be at be at least 14 characters.';
+                }else{
+                    error = 'Your NID is incorrect.'
+                }
+            }
+            if(error != ''){
+                $('.has-nid-error').css('display','block');
+                $('.has-nid-error > strong').html(error);
+            }else{
+                $('.has-nid-error').css('display','none');
+            }
+        })
+    });
+
     var uploadedAttachmentsMap = {}
 Dropzone.options.attachmentsDropzone = {
     url: '{{ route('admin.tickets.storeMedia') }}',
